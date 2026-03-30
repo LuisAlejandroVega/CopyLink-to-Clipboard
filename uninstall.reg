@@ -1,10 +1,14 @@
-Windows Registry Editor Version 5.00
+@echo off
+echo Uninstalling CopyLinktoClipboard from the registry...
 
-; Remove Default Programs registration
-[-HKEY_LOCAL_MACHINE\SOFTWARE\RegisteredApplications\CopyLinktoClipboard]
+REM Remove from RegisteredApplications
+reg delete "HKLM\SOFTWARE\RegisteredApplications" /v "CopyLinktoClipboard" /f
 
-; Remove application capabilities
-[-HKEY_LOCAL_MACHINE\SOFTWARE\CopyLinktoClipboard]
+REM Remove Capabilities
+reg delete "HKLM\SOFTWARE\CopyLinktoClipboard" /f
 
-; Remove URL handler class
-[-HKEY_LOCAL_MACHINE\Software\Classes\CopyLinktoClipboard]
+REM Remove URL Handler
+reg delete "HKLM\Software\Classes\CopyLinktoClipboardURL" /f
+
+echo done.
+pause
