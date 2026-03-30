@@ -1,6 +1,4 @@
-python -m pip install win10toast
-python -m pip install pyperclip
-python -m pip install pyinstaller
+python -m pip install win11toast pyperclip pyinstaller
 
-echo done.
+echo Done!
 pause
